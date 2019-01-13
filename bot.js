@@ -74,7 +74,7 @@ client.on('message', dark => {
         }, 900)
     }
     
-})
+});
 
 
 
