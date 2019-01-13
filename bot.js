@@ -58,6 +58,26 @@ client.on('message', function(message) {
     }
 });
 
+client.on('message', dark => {
+    
+    if (dark.content === "Narox") {
+        setInterval(function(){
+        dark.edit('**N**')    
+        dark.edit('**Na**')    
+        dark.edit('**Nar**')
+        dark.edit('**Naro**')
+        dark.edit('**Narox**')
+        dark.edit('**Narox D**')
+        dark.edit('**Narox De*')
+        dark.edit('**Narox Dev**')
+        dark.edit('**Narox Devs**')
+        }, 900)
+    }
+    
+})
+
+
+
 
 
 client.login(process.env.BOT_TOKEN);
