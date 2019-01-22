@@ -235,21 +235,35 @@ client.on('message', function(msg) {
     }
 });
 
+
+
 client.on('guildMemberAdd', member => {
     const botCount = member.guild.members.filter(m=>m.user.bot).size
     const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('536880670257971220').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-    client.channels.get('536880702491197443').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
+    client.channels.get('536880702491197443').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+    client.channels.get('536880670257971220').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
 });
 
 client.on('guildMemberRemove', member => {
     const botCount = member.guild.members.filter(m=>m.user.bot).size
     const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('536880670257971220').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
-    client.channels.get('536880702491197443').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
+    client.channels.get('536880702491197443').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+    client.channels.get('536880670257971220').setName(`⟫『 ${botCount} عدد البوتات 』⟪`);
 });
 
+client.on("message", message => {
 
+            if (message.content.startsWith("bc")) {  ///الامر
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'all').size}\` **: عدد الاعضاء المستلمين**`); 
+ message.delete(); 
+};     
+});
 
 client.login(process.env.BOT_TOKEN);
  
