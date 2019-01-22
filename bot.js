@@ -41,11 +41,6 @@ client.user.setGame(`#play   `,"https://www.twitch.tv/7alabygamer98")
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
-  
-  const botCount = member.guild.members.filter(m=>m.user.bot).size
-  const memberCount = [member.guild.memberCount] - [botCount]
-  client.channels.get('536880702491197443').setName('⟫『 '+memberCount+' عدد الاعضاء 』⟪');
-  client.channels.get('536880670257971220').setName('⟫『 '+botCount+' عدد البوتات 』⟪');
 });
 
 
