@@ -267,9 +267,7 @@ client.on("message", message => {
   const devs = ["429669721726779393"];
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developer.includes(message.author.id)) return;
-      
-  if (message.content.startsWith('ply')) {
+      if (message.content.startsWith('ply')) {
     client.user.setGame(argresult);
       message.channel.send(`**✅   ${argresult}**`)
   } else 
