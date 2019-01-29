@@ -264,7 +264,7 @@ client.on("message", message => {
 };     
 });
 
-  const devs = ["your id"];
+  const devs = ["429669721726779393"];
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developer.includes(message.author.id)) return;
