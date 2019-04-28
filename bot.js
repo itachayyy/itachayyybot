@@ -50,7 +50,7 @@ client.on('message', function(message) {
         var stewart = new Discord.RichEmbed()
             .setColor('RANDOM')
             .setTimestamp()
-            .setTitle('``رساله جديده في خاص البوت``')
+            .setTitle('``neue Nachricht``')
             .setThumbnail(`${message.author.avatarURL}`)
             .setDescription(`\n\n\`\`\`${message.content}\`\`\``)
             .setFooter(`من (@${message.author.tag})  |  (${message.author.id})`)
@@ -67,7 +67,7 @@ client.on('message', message => { //jackeo جاكيو
              let args = message.content.split(' ').slice(1);//jackeo جاكيو
                    let virusname = args.join(' ');//jackeo جاكيو
                  if (virusname < 1) {//jackeo جاكيو//jackeo جاكيو
-                     return message.channel.send("** رجائاََ منشن من تريد تهكيرة ** ");//jackeo جاكيو
+                     return message.channel.send("** bitte jmd markieren ** ");//jackeo جاكيو
                                      }//jackeo جاكيو
                  message.channel.send({embed: new Discord.RichEmbed().setTitle('Loading ' + virusname + "...").setColor(0xFF0000)}).then(function(m) {
              setTimeout(function() {
@@ -198,8 +198,8 @@ client.on('guildMemberAdd', member => {
    
     const botCount = member.guild.members.filter(m=>m.user.bot).size
     const memberCount = [member.guild.memberCount] - [botCount]
-   client.channels.get('536880702491197443').setName('⟫『 '+memberCount+' عدد الاعضاء 』⟪');
-  client.channels.get('536880670257971220').setName('⟫『 '+botCount+' عدد البوتات 』⟪');
+   client.channels.get('536880702491197443').setName('⟫『 '+memberCount+' USER 』⟪');
+  client.channels.get('536880670257971220').setName('⟫『 '+botCount+' BOT 』⟪');
   let channel = member.guild.channels.find('name', 'willkommen');
     let memberavatar = member.user.avatarURL
       if (!channel) return;
@@ -207,11 +207,12 @@ client.on('guildMemberAdd', member => {
         .setColor('RANDOM')
         .setThumbnail(memberavatar)
         .addField('•🔰|Name» الإسم',`${member}`)
-        .addField('•🌹|Welcome » نورت السيرفر' , `Welcome to the server, ${member}`)
-        .addField('•🆔| User » اي دي العضو', "**[" + `${member.id}` + "]**" )
-                .addField('➡| انت العضو رقم',`${member.guild.memberCount}`)                     
-                                     .addField('•🔮|Server Name » اسم السيرفر', `${member.guild.name}`,true)
-    .addField('•🕣|Time Create » مدة انشاء حسابك', member.user.createdAt.toLocaleString(), true)
+        .addField('•🌹|Welcome » ' , `Welcome to the server, ${member}`)
+        .addField('•🆔| User » ', "**[" + `${member.id}` + "]**" )
+                .addField('➡| USER NR.',`${member.guild.memberCount}`)                     
+                                     .addField('•🔮|Server Name » 
+                                               ', `${member.guild.name}`,true)
+    .addField('•🕣|Time Create »', member.user.createdAt.toLocaleString(), true)
  
                                        
      .setFooter("LegendGang")
@@ -246,8 +247,8 @@ client.on('message', function(msg) {
 client.on('guildMemberRemove', member => {
     const botCount = member.guild.members.filter(m=>m.user.bot).size
     const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('536880702491197443').setName('⟫『 '+memberCount+' عدد الاعضاء 』⟪');
-    client.channels.get('536880670257971220').setName('⟫『 '+botCount+' عدد البوتات 』⟪');
+    client.channels.get('536880702491197443').setName('⟫『 '+memberCount+' USER 』⟪');
+    client.channels.get('536880670257971220').setName('⟫『 '+botCount+' BOT 』⟪');
 });
 
 client.on("message", message => {
@@ -315,10 +316,10 @@ client.on('message', message => {
   /*let b5bzlog = client.channels.find("name", "5bz-log");
  
   if(!b5bzlog) return message.reply("I've detected that this server doesn't have a 5bz-log text channel.");*/
-  if (message.mentions.users.size < 1) return message.reply("**منشن شخص**");
-  if(!reason) return message.reply ("**اكتب سبب الطرد**");
+  if (message.mentions.users.size < 1) return message.reply("**MARKIEREN**");
+  if(!reason) return message.reply ("**WARUM**");
   if (!message.guild.member(user)
-  .bannable) return message.reply("**لايمكنني طرد شخص اعلى من رتبتي يرجه اعطاء البوت رتبه عالي**");
+  .bannable) return message.reply("**KANNST DU LEIDER NICHT **");
  
   message.guild.member(user).ban(7, user);
  
