@@ -440,4 +440,4 @@ var prefix = "-"
 
 
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.NzAwMDQ4NTg1NTI5NDkxNTI3.XpdRMA.7a-oRjNsSDIvRp1qMfn5Tsz3_6Q);
