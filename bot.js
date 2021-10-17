@@ -440,4 +440,4 @@ var prefix = "-"
 
 
 
-client.login(process.env.NzAwMDQ4NTg1NTI5NDkxNTI3.XpdRMA.7a-oRjNsSDIvRp1qMfn5Tsz3_6Q);
+client.login(process.env.ODk4OTg5OTQ5NTQ4ODk2MjU3.YWsPog.MJUFrukbZKeHG3RwBce0CCAUqkw);
